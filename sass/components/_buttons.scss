@@ -1,0 +1,47 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: 2.29px;
+  color: variables.$celeste;
+  position: absolute;
+  bottom: 10%;
+  right: 0%;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+button.noticias::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: variables.$celeste;
+  width: 103px;
+  bottom: 0px;
+  left: -2px;
+}
+
+button.noticias,
+button.cursos {
+  &:hover::before {
+    background-color: variables.$amarillo;
+  }
+}
+
+button.cursos::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: variables.$celeste;
+  width: 100px;
+  bottom: 0px;
+  left: -2px;
+}
+button:hover {
+  color: variables.$amarillo;
+}

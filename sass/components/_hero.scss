@@ -1,0 +1,521 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.hero__container {
+  a {
+    text-decoration: none;
+  }
+  &_seccion {
+    &-conocenos {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: variables.$verde;
+      svg {
+        width: 100px;
+        height: 100px;
+        fill: white;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        letter-spacing: 0.9px;
+        color: white;
+      }
+      h3 {
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        color: white;
+      }
+    }
+
+    &-tour {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: variables.$amarillo;
+      svg {
+        width: 100px;
+        height: 100px;
+        path {
+          fill: white;
+        }
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        font-size: normal;
+        letter-spacing: 0.9px;
+        color: white;
+      }
+      h3 {
+        font-size: 12px;
+        font-weight: normal;
+        font-size: normal;
+        color: white;
+      }
+    }
+
+    &-mision {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: variables.$celeste;
+      svg {
+        width: 100px;
+        height: 100px;
+        fill: white;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        font-size: normal;
+        letter-spacing: 0.9px;
+        color: white;
+      }
+      h3 {
+        font-size: 12px;
+        font-weight: normal;
+        font-size: normal;
+        color: white;
+      }
+    }
+
+    &-contacto {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: variables.$rosa;
+      svg {
+        width: 70px;
+        height: 70px;
+        path {
+          fill: white;
+        }
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        font-size: normal;
+        letter-spacing: 0.9px;
+        color: white;
+        padding-bottom: 10px;
+      }
+      ul {
+        font-size: 12px;
+        font-weight: normal;
+        font-size: normal;
+        color: white;
+        padding-left: 15px;
+        li {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+  @include mixins.breakpoint(tablet) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    &_seccion {
+      flex: 1;
+      div {
+        height: 190px;
+      }
+    }
+  }
+
+  @include mixins.breakpoint(desktop) {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 300px;
+
+    &_seccion {
+      position: relative;
+      div {
+        position: absolute;
+        height: 200px;
+        &:hover {
+          top: -20px;
+        }
+      }
+      h2 {
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+      h3,
+      li {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+
+  @include mixins.breakpoint(desktopxl) {
+    margin-bottom: 300px;
+    padding-right: 45px;
+    &_seccion {
+      div {
+        width: 94%;
+        height: 200px;
+      }
+    }
+  }
+}
+
+.hero__noticias {
+  &_seccion-titulo {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    background-color: variables.$rojo;
+    svg {
+      width: 100px;
+      height: 100px;
+      fill: white;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      font-style: normal;
+      color: white;
+    }
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      color: white;
+    }
+  }
+
+  &_seccion-articulo {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 50px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+    }
+    .separador {
+      background-color: blue;
+      width: 50px;
+      height: 4px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0px;
+      justify-self: center;
+      margin-bottom: 30px;
+    }
+    .separador .triangulo {
+      position: absolute;
+      bottom: 3px;
+      justify-self: center;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid blue;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 0.85px;
+      line-height: 20px;
+      color: variables.$azul;
+      padding-bottom: 10px;
+    }
+    img {
+      width: 100%;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 18px;
+      padding-bottom: 70px;
+    }
+  }
+
+  @include mixins.breakpoint(tablet) {
+    &_seccion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      &-titulo {
+        grid-column: 1 / span 2;
+      }
+    }
+  }
+  @include mixins.breakpoint(desktop) {
+    &_seccion-titulo {
+      h2 {
+        font-size: 30px;
+        letter-spacing: 3px;
+      }
+      p {
+        font-size: 22px;
+      }
+    }
+    &_seccion-articulo {
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 20px;
+        letter-spacing: 2px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.hero__cursos {
+  &_seccion-titulo {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    background-color: variables.$violeta;
+    svg {
+      width: 100px;
+      height: 100px;
+      fill: white;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      font-style: normal;
+      color: white;
+    }
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      color: white;
+    }
+  }
+
+  &_seccion-articulo {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 30px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+    }
+    .separador {
+      background-color: blue;
+      width: 50px;
+      height: 4px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0px;
+      justify-self: center;
+      margin-bottom: 30px;
+    }
+    .separador .triangulo {
+      position: absolute;
+      bottom: 3px;
+      justify-self: center;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid blue;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 0.85px;
+      line-height: 20px;
+      color: variables.$azul;
+      padding-bottom: 10px;
+    }
+    img {
+      width: 100%;
+      height: 250px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 18px;
+      padding-bottom: 70px;
+    }
+  }
+
+  @include mixins.breakpoint(tablet) {
+    &_seccion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      &-titulo {
+        grid-column: 1 / span 2;
+      }
+      img {
+        width: 100%;
+        height: 80%;
+      }
+    }
+  }
+
+  @include mixins.breakpoint(desktop) {
+    &_seccion {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      &-titulo {
+        grid-column: 1 / span 3;
+      }
+    }
+  }
+}
+
+.hero__qsomos {
+  margin-top: 40px;
+
+  &_titulo {
+    padding: 15px;
+    margin-bottom: 15px;
+    color: white;
+    background-color: variables.$celeste;
+  }
+  &_seccion {
+    p {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    &-subtitulo {
+      padding: 15px;
+      margin-bottom: 15px;
+      color: white;
+      background-color: variables.$verde;
+    }
+  }
+
+  &_seccion-articulo {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 50px;
+    position: relative;
+
+    h3 {
+      font-style: italic;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: auto;
+    }
+
+    .separador {
+      background-color: blue;
+      width: 50px;
+      height: 4px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0px;
+      justify-self: center;
+      margin-bottom: 30px;
+    }
+    .separador .triangulo {
+      position: absolute;
+      bottom: 3px;
+      justify-self: center;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid blue;
+    }
+  }
+
+  @include mixins.breakpoint(desktop) {
+    &_titulo {
+      h2 {
+        font-size: 30px;
+        letter-spacing: 3px;
+      }
+      p {
+        font-size: 22px;
+      }
+    }
+    &_seccion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      &-subtitulo {
+        grid-column: 1 / span 2;
+      }
+      &-articulo {
+        h3 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 20px;
+          letter-spacing: 2px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+.hero__registro_instrucciones {
+  p {
+    padding: 15px;
+  }
+  &-pasos {
+    padding-left: 15px;
+    h3 {
+      color: variables.$verde;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    p {
+      padding-top: 0px;
+      padding-bottom: 5px;
+      line-height: 20px;
+    }
+
+    &--requerido {
+      padding-left: 0px;
+      font-size: 12px;
+      color: red;
+    }
+  }
+}
+
+.hero__registro_formulario {
+  padding: 15px;
+  &-datos {
+    margin-bottom: 15px;
+    legend {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    p {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+  &-boton {
+    display: flex;
+    justify-content: space-between;
+  }
+}

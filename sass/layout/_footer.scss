@@ -1,0 +1,163 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.footer {
+  background-color: variables.$gris-oscuro;
+
+  &__container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+
+    &_horario {
+      margin-bottom: 40px;
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        letter-spacing: 0.95px;
+        color: white;
+        padding-bottom: 15px;
+      }
+      table {
+        width: 100%;
+        margin-bottom: 15px;
+        border-spacing: 0;
+        border-collapse: collapse;
+        tbody {
+          tr {
+            font-size: 12px;
+            font-weight: 400;
+            border-bottom: 1px dashed variables.$gris-claro;
+            color: white;
+
+            td.day_label {
+              padding: 9px 0px;
+              text-align: left;
+            }
+            td.day_value {
+              padding-left: 3px;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+
+    &_enlaces {
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        letter-spacing: 0.95px;
+        color: white;
+        padding-bottom: 15px;
+      }
+      ul {
+        list-style: none;
+        margin-bottom: 10px;
+        li {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 15px;
+          border-bottom: 1px solid variables.$gris-claro;
+          position: relative;
+          span {
+            font-size: 12px;
+            font-weight: normal;
+            letter-spacing: 0.95px;
+            color: white;
+            &:hover {
+              color: variables.$amarillo;
+            }
+            a {
+              text-decoration: none;
+            }
+          }
+          a::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 14px;
+            top: 19px;
+            left: 0px;
+            background-image: url(../img/chevron.png);
+            background-repeat: no-repeat;
+            background-size: 6px 8px;
+          }
+        }
+      }
+    }
+  }
+  &__cr {
+    padding-top: 15px;
+    color: variables.$gris-claro;
+    justify-items: center;
+    font-size: 10px;
+    margin-bottom: 15px;
+    a {
+      color: variables.$celeste;
+    }
+    a:hover {
+      color: variables.$amarillo;
+    }
+  }
+  &__iconos {
+    display: flex;
+    justify-content: space-between;
+    gap: 17px;
+    width: 90px;
+    padding-bottom: 30px;
+    justify-self: center;
+
+    svg {
+      color: white;
+    }
+    :hover {
+      color: variables.$amarillo;
+    }
+  }
+
+  @include mixins.breakpoint(tablet) {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      &_horario {
+        width: 100%;
+        h3 {
+          font-size: 22px;
+        }
+        table {
+          tbody {
+            tr {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &_enlaces {
+        width: 100%;
+        h3 {
+          font-size: 22px;
+        }
+        ul {
+          list-style: none;
+          margin-bottom: 10px;
+          li {
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    &__cr {
+      font-size: 14px;
+    }
+    &__iconos {
+      width: 130px;
+    }
+  }
+}
